@@ -3,7 +3,7 @@ package Hw3;
 import java.util.Arrays;
 import java.util.Scanner; //輸入互動套件
 
-public class Hw3 {
+public class Hw3_advance {
 	public static void main(String[] args) {
 		hw1();
 		hw2();
@@ -29,6 +29,8 @@ public class Hw3 {
 				System.out.println("正三角形");
 			} else if (lenOfT[0] == lenOfT[1] && lenOfT[1] < lenOfT[2]) {
 				System.out.println("等腰三角形");
+			} else if(Math.pow(lenOfT[0],2) + Math.pow(lenOfT[1],2) == Math.pow(lenOfT[2],2)) {
+				System.out.println("直角三角形");
 			} else {
 				System.out.println("其他三角形");
 			}
@@ -43,18 +45,21 @@ public class Hw3 {
 //		請設計一隻程式,會亂數產生一個0~9的數字,然後可以玩猜數字遊戲,猜錯會顯示錯誤訊息,猜
 //		對則顯示正確訊息,如圖示結果:
 		Scanner sc = new Scanner(System.in); // 輸入物件宣告
-		int input = 10;
+		int input = -1;
 
 		System.out.println("開始猜數字吧!");
 
-		int ans = (int) (Math.random() * 10); // 數字答案
+		int ans = (int) (Math.random() * 101); // 數字答案
 		do {
 			input = sc.nextInt();
 			if (input == ans) {
 				System.out.println(String.format("答對了!答案就是%s", ans));
-			} else {
-				System.out.println("猜錯囉");
+			} else if(input < ans) {
+				System.out.println("猜錯囉!猜大點");
+			} else if(input > ans) {
+				System.out.println("猜錯囉!猜小點");
 			}
+			
 		} while (input != ans); // 答案跟輸入不相等就繼續猜
 
 	}
@@ -66,6 +71,7 @@ public class Hw3 {
 		Scanner sc = new Scanner(System.in); // 輸入物件宣告
 		int count = 0;
 		int dislike = 0;
+		int [] li = new int[49];
 
 		// 防止阿文打1-9以外的數字
 		while (dislike >= 10 || dislike <= 0) {
@@ -77,13 +83,26 @@ public class Hw3 {
 			if (i % 10 == dislike || i == dislike || (i >= dislike * 10 && i < (dislike + 1) * 10)) {
 				continue;
 			} else {
-				System.out.print(String.format("%s\t", i));
+				//System.out.print(String.format("%s\t", i));
+				li[count] = i;
 				count++;
 			}
-			if (count % 10 == 0) {
-				System.out.println();
+//			if (count % 10 == 0) {
+//				System.out.println();
+//			}
+		}
+		System.out.println();
+		
+		int choice = count;
+		int[] finC =new int[6]; 
+		for(int i =0;i<6;i++) {
+			int rn = (int)(Math.random()*choice); //產生符合可選數字的隨機亂數
+			if(!finC.equals(li)) { //確保不重複
+				finC[i] = li[rn];
+				System.out.print(finC[i]+"\t");
 			}
 		}
+		
 		System.out.println();
 		System.out.println(String.format("總共可選%s個數字", count));
 		System.out.println();
