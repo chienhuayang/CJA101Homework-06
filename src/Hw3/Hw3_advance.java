@@ -5,8 +5,8 @@ import java.util.Scanner; //輸入互動套件
 
 public class Hw3_advance {
 	public static void main(String[] args) {
-//		hw1();
-//		hw2();
+		hw1();
+		hw2();
 		hw3();
 	}
 
