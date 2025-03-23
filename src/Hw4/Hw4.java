@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Hw4 {
 	public static void main(String[] args) {
-//		hw1();
-//		hw2();
-//		hw3();
-//		hw4();
+		hw1();
+		hw2();
+		hw3();
+		hw4();
 		hw5();
-//		hw6();
+		hw6();
 	}
 
 	public static void hw1() {
@@ -19,7 +19,6 @@ public class Hw4 {
 //		(提示:陣列,length屬性)
 
 		int[] li = { 29, 100, 39, 41, 50, 8, 66, 77, 95, 15 };
-		int[] big = new int[10];
 		int sum = 0;
 
 		for (int i = 0; i < li.length; i++) {
