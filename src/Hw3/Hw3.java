@@ -18,6 +18,7 @@ public class Hw3 {
 		int[] lenOfT = new int[3];
 		for (int i = 0; i < 3; i++) {
 			lenOfT[i] = sc.nextInt();
+			sc.close();
 			// System.out.println(lenOfT[i]);
 		}
 
@@ -56,6 +57,8 @@ public class Hw3 {
 				System.out.println("猜錯囉");
 			}
 		} while (input != ans); // 答案跟輸入不相等就繼續猜
+		
+		sc.close();
 
 	}
 
@@ -87,6 +90,8 @@ public class Hw3 {
 		System.out.println();
 		System.out.println(String.format("總共可選%s個數字", count));
 		System.out.println();
+		
+		sc.close();
 
 	}
 }

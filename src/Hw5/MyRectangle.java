@@ -20,12 +20,12 @@ public class MyRectangle {
 		double rec = width * depth;
 		return rec;
 	}
-	
+
 	public MyRectangle() {
-		
+
 	}
-	
-	public MyRectangle(double width,double depth) {
+
+	public MyRectangle(double width, double depth) {
 		this.width = width;
 		this.depth = depth;
 	}

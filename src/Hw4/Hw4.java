@@ -109,6 +109,7 @@ public class Hw4 {
 		} else {
 			System.out.println("借太多啦!沒人借的了，用搶得比較快!");
 		}
+		sc.close();
 	}
 
 	public static void hw5() {
@@ -121,27 +122,26 @@ public class Hw4 {
 //		(提示3:擋下錯誤輸入:例如月份輸入為2,則日期不該超過29)
 		Scanner sc = new Scanner(System.in);
 		System.out.println("輸入三個整數,分別代表西元yyyy年,mm月,dd日,執行後會顯示是該年的第幾天");
-		int days = 0,yy=0,mm=0,dd = 0;
-		
+		int days = 0, yy = 0, mm = 0, dd = 0;
+
 		do {
 			yy = sc.nextInt();
 			mm = sc.nextInt();
 			dd = sc.nextInt();
-			if(mm!=2 && (mm<=7 && mm%2==0 && dd>30)||(mm>7 && mm%2!=0 && dd>30)) {
+			if (mm != 2 && (mm <= 7 && mm % 2 == 0 && dd > 30) || (mm > 7 && mm % 2 != 0 && dd > 30)) {
 				System.out.println("該月不超過30天!!請重新輸入年月日:");
 				dd = 0;
-			}else if(mm==2 && yy%4==0 && dd>29) {
+			} else if (mm == 2 && yy % 4 == 0 && dd > 29) {
 				System.out.println("閏年2月也只有29天。重新輸入年月日:");
 				dd = 0;
-			}else if(mm==2 && yy%4!=0 && dd>28) {
+			} else if (mm == 2 && yy % 4 != 0 && dd > 28) {
 				System.out.println("2月只有28天。請重新輸入年月日:");
 				dd = 0;
 			}
-			
-				
-		}while(dd==0);
-		
-		int[] input = {yy,mm,dd};
+
+		} while (dd == 0);
+
+		int[] input = { yy, mm, dd };
 
 		// 判斷是否為閏年
 		if (input[0] % 4 == 0) {
@@ -176,8 +176,8 @@ public class Hw4 {
 				days = 30 * ((input[1] - 1) / 2) + 31 * (input[1] / 2) + 28 + input[2];
 			}
 		}
-		System.out.println(String.format("這是%s年的第%s天", input[0],days));
-
+		System.out.println(String.format("這是%s年的第%s天", input[0], days));
+		sc.close();
 	}
 
 	public static void hw6() {

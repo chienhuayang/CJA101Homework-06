@@ -38,6 +38,7 @@ public class Hw3_advance {
 		} else {
 			System.out.println("不是三角形");
 		}
+		sc.close();
 
 	}
 
@@ -61,6 +62,7 @@ public class Hw3_advance {
 			}
 
 		} while (input != ans); // 答案跟輸入不相等就繼續猜
+		sc.close();
 
 	}
 
@@ -96,16 +98,16 @@ public class Hw3_advance {
 		int choice = count;
 		int[] finC = new int[6];
 		int cnt = 0;
-		while(cnt<6){
+		while (cnt < 6) {
 			int rn = (int) (Math.random() * choice); // 產生符合可選數字的隨機亂數
-			if (li[rn]>0) { 
+			if (li[rn] > 0) {
 				finC[cnt] = li[rn];
-				li[rn]=0; // 確保不重複
+				li[rn] = 0; // 確保不重複
 				System.out.print(finC[cnt] + "\t");
 				cnt++;
 			}
 		}
-		
+
 //		確認篩選機制無誤
 //		System.out.println();
 //		for (int i = 0; i <= count; i++) {
@@ -117,6 +119,7 @@ public class Hw3_advance {
 		System.out.println();
 		System.out.println(String.format("總共可選%s個數字", count));
 		System.out.println();
+		sc.close();
 
 	}
 }

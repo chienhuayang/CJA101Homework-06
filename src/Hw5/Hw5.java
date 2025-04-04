@@ -29,18 +29,20 @@ public class Hw5 {
 		MyRectangle r = new MyRectangle();
 		r.setWidth(10);
 		r.setDepth(20);
-		System.out.println("Area = "+r.getArea());
-		
+		System.out.println("Area = " + r.getArea());
+
 		System.out.println("==========");
-		
-		MyRectangle r1 = new MyRectangle(10,20);
-		System.out.println("Area = "+r1.getArea());
-		
-		//hw5
+
+		MyRectangle r1 = new MyRectangle(10, 20);
+		System.out.println("Area = " + r1.getArea());
+
+		// hw5
 		genAuthCode();
 
+		sc.close();
+
 	}
-	
+
 	public static void starSqare(int width, int height) {
 		// TODO Auto-generated method stub
 
@@ -75,31 +77,31 @@ public class Hw5 {
 //		身為程式設計師的你,收到一個任務,要幫系統的註冊新增驗證碼的功能,請設計一個方法
 //		genAuthCode(),當呼叫此方法時,會回傳一個8位數的驗證碼,此驗證碼內容包含了英文大小寫
 //		與數字的亂數組合,如圖:
-		
-		//建立陣列紀錄字母+數字ASCII共62個(26+26+10)
+
+		// 建立陣列紀錄字母+數字ASCII共62個(26+26+10)
 		int[] alphabet = new int[62];
-		int start = 48,j=0;
-		
-		while(start<123) {
-			if(start>=48 && start<58) {
-				alphabet[j] = start; //數字轉字元存入 //0~9
+		int start = 48, j = 0;
+
+		while (start < 123) {
+			if (start >= 48 && start < 58) {
+				alphabet[j] = start; // 數字轉字元存入 //0~9
 				j++;
-			}else if(start>=65 && start<=90) {
-				alphabet[j] = start; //數字轉字元存入 //A~Z
+			} else if (start >= 65 && start <= 90) {
+				alphabet[j] = start; // 數字轉字元存入 //A~Z
 				j++;
-			}else if(start>=97 && start<=122) {
-				alphabet[j] = start; //數字轉字元存入 //a~z
+			} else if (start >= 97 && start <= 122) {
+				alphabet[j] = start; // 數字轉字元存入 //a~z
 				j++;
 			}
 			start++;
 		}
 		System.out.println();
 		System.out.println("本次隨機產生驗證碼為:");
-		
+
 		for (int i = 0; i < 8; i++) {
 			int k = (int) (Math.random() * 63); // 設置亂數存入陣列
-			//System.out.print(k); // 打印亂數
-			System.out.print((char)alphabet[k]); // 打印亂數
+			// System.out.print(k); // 打印亂數
+			System.out.print((char) alphabet[k]); // 打印亂數
 		}
 	}
 }
