@@ -2,8 +2,8 @@ package hw9;
 
 public class Hw9 {
 	public static void main(String[] args) {
-//		hw9_1();
-//		
+		hw9_1();
+		
 		BankDeposit b = new BankDeposit();
 		Producer mom = new Producer(b);
 		Consumer bear = new Consumer(b);
